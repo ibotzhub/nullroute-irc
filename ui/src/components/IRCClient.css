@@ -1,0 +1,453 @@
+.irc-client {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg-color, #1e1e1e);
+  color: var(--text-color, #ffffff);
+}
+
+.irc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--header-bg, #2d2d2d);
+  border-bottom: 1px solid var(--border-color, #404040);
+}
+
+.irc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.irc-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.irc-status-connected {
+  color: #4caf50;
+  font-size: 0.9rem;
+}
+
+.irc-status-connecting {
+  color: #ff9800;
+  font-size: 0.9rem;
+}
+
+.irc-status-disconnected {
+  color: #f44336;
+  font-size: 0.9rem;
+}
+
+.irc-header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.irc-header-actions button {
+  background: transparent;
+  border: 1px solid var(--border-color, #404040);
+  color: var(--text-color, #ffffff);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.irc-header-actions button:hover {
+  background: var(--hover-bg, #3d3d3d);
+}
+
+.irc-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.irc-sidebar {
+  width: 250px;
+  background: var(--sidebar-bg, #252525);
+  border-right: 1px solid var(--border-color, #404040);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.irc-sidebar-section {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color, #404040);
+}
+
+.irc-sidebar-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--muted-color, #888);
+}
+
+.irc-create-channel-btn {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.irc-create-channel-btn:hover {
+  background: #45a049;
+}
+
+.badge.master-admin {
+  background: #ff9800;
+  color: white;
+}
+
+.badge.admin {
+  background: #2196f3;
+  color: white;
+}
+
+.badge.pending {
+  background: #ffc107;
+  color: black;
+}
+
+.irc-join-form {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.irc-join-input {
+  flex: 1;
+  padding: 0.5rem;
+  background: var(--input-bg, #1e1e1e);
+  border: 1px solid var(--border-color, #404040);
+  color: var(--text-color, #ffffff);
+  border-radius: 4px;
+}
+
+.irc-join-form button {
+  padding: 0.5rem 1rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.irc-channel-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+
+.irc-channel-item:hover {
+  background: var(--hover-bg, #3d3d3d);
+}
+
+.irc-channel-item.active {
+  background: var(--active-bg, #2196f3);
+}
+
+.irc-channel-item span:first-child {
+  flex: 1;
+}
+
+.irc-unread-badge {
+  background: #f44336;
+  color: white;
+  border-radius: 10px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.irc-part-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-color, #ffffff);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.irc-part-btn:hover {
+  color: #f44336;
+}
+
+.irc-nick-item {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.irc-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.irc-chat-header {
+  padding: 1rem;
+  background: var(--header-bg, #2d2d2d);
+  border-bottom: 1px solid var(--border-color, #404040);
+}
+
+.irc-chat-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.irc-chat-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.irc-chat-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.irc-chat-header-actions button {
+  background: transparent;
+  border: 1px solid var(--border-color, #404040);
+  color: var(--text-color, #ffffff);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.irc-chat-header-actions button:hover {
+  background-color: var(--hover-bg, rgba(255, 255, 255, 0.1));
+}
+
+.irc-topic {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted-color, #888);
+  font-style: italic;
+}
+
+.irc-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.irc-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--muted-color, #888);
+  text-align: center;
+}
+
+.irc-empty {
+  text-align: center;
+  color: var(--muted-color, #888);
+  padding: 2rem;
+}
+
+.irc-message {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.irc-message-time {
+  color: var(--muted-color, #888);
+  font-size: 0.8rem;
+  min-width: 60px;
+}
+
+.irc-message-nick {
+  color: #4caf50;
+  font-weight: bold;
+  min-width: 100px;
+}
+
+.irc-message-nick.clickable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.irc-message-nick.clickable:hover {
+  opacity: 0.8;
+}
+
+.irc-message-text {
+  flex: 1;
+}
+
+.irc-message-action {
+  font-style: italic;
+}
+
+.irc-input-form {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color, #404040);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.irc-search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.irc-search-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color, #404040);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.irc-search-results {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color, #404040);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.irc-pinned-messages {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color, #404040);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.irc-input {
+  flex: 1;
+  padding: 0.75rem;
+  background: var(--input-bg, #1e1e1e);
+  border: 1px solid var(--border-color, #404040);
+  color: var(--text-color, #ffffff);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.irc-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.irc-input-form button {
+  padding: 0.75rem 1.5rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.irc-input-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.irc-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.irc-modal {
+  background: var(--bg-color, #1e1e1e);
+  border: 1px solid var(--border-color, #404040);
+  border-radius: 8px;
+  padding: 2rem;
+  min-width: 300px;
+}
+
+.irc-modal h3 {
+  margin: 0 0 1rem 0;
+}
+
+.irc-modal input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: var(--input-bg, #2d2d2d);
+  border: 1px solid var(--border-color, #404040);
+  color: var(--text-color, #ffffff);
+  border-radius: 4px;
+}
+
+.irc-modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.irc-modal-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.irc-modal-actions button[type="button"] {
+  background: var(--hover-bg, #3d3d3d);
+  color: var(--text-color, #ffffff);
+}
+
+.irc-modal-actions button[type="submit"] {
+  background: #2196f3;
+  color: white;
+}
+
+/* Theme support */
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f5f5f5;
+  --sidebar-bg: #fafafa;
+  --border-color: #e0e0e0;
+  --hover-bg: #f0f0f0;
+  --active-bg: #e3f2fd;
+  --input-bg: #ffffff;
+  --muted-color: #666;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --header-bg: #2d2d2d;
+  --sidebar-bg: #252525;
+  --border-color: #404040;
+  --hover-bg: #3d3d3d;
+  --active-bg: #2196f3;
+  --input-bg: #1e1e1e;
+  --muted-color: #888;
+}

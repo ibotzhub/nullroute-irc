@@ -1,0 +1,163 @@
+.irc-message {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.irc-message:hover .irc-message-actions {
+  opacity: 1;
+}
+
+.irc-message.pinned {
+  background-color: var(--pinned-bg, rgba(255, 255, 0, 0.1));
+  border-left: 3px solid var(--accent-color);
+}
+
+.irc-message-time {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+}
+
+.irc-message-nick {
+  font-weight: bold;
+  color: var(--nick-color, #4a9eff);
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.irc-message-nick:hover {
+  text-decoration: underline;
+}
+
+.irc-message-unique-id {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.irc-message-text {
+  word-wrap: break-word;
+}
+
+.irc-message-text code {
+  background-color: var(--code-bg, rgba(0, 0, 0, 0.2));
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.irc-message-text a {
+  color: var(--link-color, #4a9eff);
+  text-decoration: underline;
+}
+
+.irc-message-text .mention {
+  background-color: var(--mention-bg, rgba(74, 158, 255, 0.2));
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.irc-message-edited {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-left: 0.5rem;
+}
+
+.irc-message-pinned {
+  margin-left: 0.5rem;
+}
+
+.irc-message-actions {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.irc-message-actions button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.irc-message-actions button:hover {
+  color: var(--text-color);
+  background-color: var(--hover-bg);
+}
+
+.irc-message-reactions {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.irc-reaction {
+  background-color: var(--reaction-bg, rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.irc-reaction:hover {
+  background-color: var(--reaction-hover-bg, rgba(0, 0, 0, 0.2));
+}
+
+.irc-reaction.active {
+  background-color: var(--reaction-active-bg, rgba(74, 158, 255, 0.3));
+  border-color: var(--accent-color);
+}
+
+.irc-reaction-picker {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--modal-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  position: absolute;
+  z-index: 10;
+}
+
+.irc-reaction-picker button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.irc-reaction-picker button:hover {
+  transform: scale(1.2);
+}
+
+.irc-message-editing {
+  padding: 0.5rem;
+  background-color: var(--editing-bg, rgba(74, 158, 255, 0.1));
+}
+
+.irc-message-editing input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.irc-message-action {
+  font-style: italic;
+}

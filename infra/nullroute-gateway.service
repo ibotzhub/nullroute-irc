@@ -1,0 +1,22 @@
+[Unit]
+Description=NullRoute IRC Gateway (Go)
+After=network.target redis.service
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/nullroute-irc/gateway
+ExecStart=/var/www/nullroute-irc/gateway/gateway
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+Environment=REDIS_ADDR=localhost:6379
+Environment=IRC_HOST=irc.example.com
+Environment=IRC_PORT=6697
+Environment=IRC_TLS=true
+Environment=IRC_INSECURE_SKIP_VERIFY=true
+
+[Install]
+WantedBy=multi-user.target

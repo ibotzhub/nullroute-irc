@@ -1,0 +1,66 @@
+.irc-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--status-bar-bg, #2d2d2d);
+  border-top: 1px solid var(--border-color, #404040);
+  font-size: 0.85rem;
+  color: var(--text-muted, #888);
+}
+
+.status-bar-left,
+.status-bar-center,
+.status-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-indicator {
+  font-size: 0.75rem;
+}
+
+.status-connected {
+  color: #4caf50;
+}
+
+.status-connecting {
+  color: #ff9800;
+}
+
+.status-disconnected {
+  color: #f44336;
+}
+
+.status-text {
+  font-weight: 500;
+}
+
+.current-nick {
+  color: var(--nick-color, #4a9eff);
+  font-weight: bold;
+}
+
+.away-indicator {
+  color: var(--away-color, #ff9800);
+  font-style: italic;
+}
+
+.channel-name {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.channel-modes {
+  color: var(--accent-color, #4a9eff);
+  font-family: monospace;
+}
+
+.user-count {
+  color: var(--text-muted);
+}
+
+.current-time {
+  font-family: monospace;
+}

@@ -1,0 +1,24 @@
+[Unit]
+Description=NullRoute IRC App (Phoenix)
+After=network.target redis.service postgresql.service
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/nullroute-irc/app
+ExecStart=/bin/bash -c 'export PATH=$PATH:/usr/local/bin:/usr/bin && mix phx.server'
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+EnvironmentFile=-/var/www/nullroute-irc/.env
+Environment=MIX_ENV=prod
+Environment=PORT=4000
+Environment=REDIS_HOST=localhost
+Environment=REDIS_PORT=6379
+Environment=DATABASE_URL=postgresql://user:password@localhost/nullroute_irc_prod
+Environment=PHX_HOST=irc.example.com
+
+[Install]
+WantedBy=multi-user.target

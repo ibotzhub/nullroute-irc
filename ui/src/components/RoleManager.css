@@ -1,0 +1,229 @@
+.role-manager-overlay,
+.role-editor-overlay,
+.role-assignment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.role-manager-modal,
+.role-editor-modal,
+.role-assignment-modal {
+  background: var(--bg-color, #1e1e1e);
+  border: 1px solid var(--border-color, #404040);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: var(--text-color, #ffffff);
+}
+
+.role-manager-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.role-manager-close {
+  background: transparent;
+  border: none;
+  color: var(--text-color, #ffffff);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.role-manager-actions {
+  margin-bottom: 1rem;
+}
+
+.role-manager-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.role-manager-item {
+  padding: 1rem;
+  background: var(--hover-bg, #3d3d3d);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role-manager-item-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.role-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.role-priority,
+.role-user-count {
+  font-size: 0.85rem;
+  color: var(--muted-color, #888);
+}
+
+.role-manager-item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.role-manager-item-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.role-manager-item-actions button.danger {
+  background: #f44336;
+  color: white;
+}
+
+.role-manager-item-actions button:not(.danger) {
+  background: #2196f3;
+  color: white;
+}
+
+.role-editor-modal {
+  min-width: 500px;
+}
+
+.role-editor-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.role-editor-modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.role-editor-modal input[type="text"],
+.role-editor-modal input[type="number"],
+.role-editor-modal input[type="color"] {
+  padding: 0.5rem;
+  background: var(--input-bg, #2d2d2d);
+  border: 1px solid var(--border-color, #404040);
+  color: var(--text-color, #ffffff);
+  border-radius: 4px;
+}
+
+.permissions-section {
+  margin-top: 1rem;
+}
+
+.permissions-section h4 {
+  margin-bottom: 1rem;
+}
+
+.permission-category {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--hover-bg, #3d3d3d);
+  border-radius: 4px;
+}
+
+.permission-category h5 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+}
+
+.permission-category label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.permission-category input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+.role-editor-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.role-editor-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.role-editor-actions button[type="button"] {
+  background: var(--hover-bg, #3d3d3d);
+  color: var(--text-color, #ffffff);
+}
+
+.role-editor-actions button[type="submit"] {
+  background: #2196f3;
+  color: white;
+}
+
+.role-assignment-modal {
+  min-width: 400px;
+}
+
+.role-assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.role-assignment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--hover-bg, #3d3d3d);
+  border-radius: 4px;
+}
+
+.role-assignment-item button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.role-assignment-item button.danger {
+  background: #f44336;
+  color: white;
+}
+
+.role-assignment-item button:not(.danger) {
+  background: #4caf50;
+  color: white;
+}
+
+.role-manager-error {
+  color: #f44336;
+  margin-bottom: 1rem;
+}
